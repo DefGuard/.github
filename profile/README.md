@@ -1,3 +1,5 @@
+![](https://github.com/DefGuard/docs/blob/docs/screencasts/defguard.gif?raw=true)
+
 defguard is an open-source security *swiss army knife* (Identity, MFA, VPN, Yubikey, Web3). Building a secure organization has always been difficult and costly. Defguard provides a beautiful, easy-to-use (business users) and deploy (admin/devops) fundament to make your organization secure.
 
 **Why?**
