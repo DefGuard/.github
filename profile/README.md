@@ -1,6 +1,6 @@
 ![](https://github.com/DefGuard/docs/blob/docs/screencasts/defguard.gif?raw=true)
 
-In a nutshell, from a functionality point defguard is an **OpenID Identity Provider (SSO for your apps with some unique features) and **Wireguard VPN Service Provider** for building secure private networks (roadwarrior, mesh/peer-to-peer, site-to-site).
+In a nutshell, from a functionality point defguard is an **OpenID Identity Provider** (SSO for your apps with some unique features) and **Wireguard VPN Service Provider** for building secure private networks (roadwarrior, mesh/peer-to-peer, site-to-site).
 
 On a broader aspect, it's a **security platform for building secure and privacy-aware organizations** (with its secure architecture).
 
@@ -41,5 +41,3 @@ Read more about this in [our documentation](https://defguard.gitbook.io/defguard
   - [iOS Web App](https://www.macrumors.com/how-to/use-web-apps-iphone-ipad/)
 * **Checked by professional security researchers** (see [comprehensive security report](https://defguard.net/images/decap/isec-defguard.pdf))
 * End2End tests
-
-![](https://github.com/DefGuard/docs/blob/docs/screencasts/defguard.gif?raw=true)
