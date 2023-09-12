@@ -1,32 +1,45 @@
 ![](https://github.com/DefGuard/docs/blob/docs/screencasts/defguard.gif?raw=true)
 
-defguard is an open-source security *swiss army knife* (Identity, MFA, VPN, Yubikey, Web3). Building a secure organization has always been difficult and costly. Defguard provides a beautiful, easy-to-use (business users) and deploy (admin/devops) fundament to make your organization secure.
+In a nutshell, from a functionality point defguard is an **OpenID Identity Provider (SSO for your apps with some unique features) and **Wireguard VPN Service Provider** for building secure private networks (roadwarrior, mesh/peer-to-peer, site-to-site).
 
-**Why?**
+On a broader aspect, it's a **security platform for building secure and privacy-aware organizations** (with its secure architecture).
 
-The story and motivation behind defguard [can be found here: https://teonite.com/blog/defguard/](https://teonite.com/blog/defguard/)
+By design **defguard core is meant to be deployed in your secure network segments** (available only from an internal network or by VPN) and operations that require **public access** (like user onboarding, enrollment, password reset, etc.) are done using a **secure proxy**.
 
-**Features:**
+Read more about this in [our documentation](https://defguard.gitbook.io/defguard/#what-is-defguard).
 
-* OpenID Connect provider (with OpenLDAP synchronization)
+**Implemented & production tested features:**
+
+* [OpenID Connect provider](https://openid.net/developers/how-connect-works/) - with **unique features**:
+  - Secure remote (over the internet) [user enrollment](https://defguard.gitbook.io/defguard/help/remote-user-enrollment)
+  - User [onboarding after enrollment](https://defguard.gitbook.io/defguard/help/remote-user-enrollment/user-onboarding-after-enrollment)
+  - LDAP (tested on [OpenLDAP](https://www.openldap.org/)) synchronization
+  - nice UI to manage users
+  - Users **self-service** (besides typical data management, users can revoke access to granted apps, MFA, Wireguard, etc.)
 * [Wireguard:tm:](https://www.wireguard.com/) VPN management with:
-  - import your current WireGuard server configuration (with a wizard!)
-  - *easy* device setup by users themselves (self-service)
-  -  automatic IP allocation
-  -  kernel & userspace WireGuard support
+  - multiple VPN Locations (networks/sites) - with defined access (all users or only Admin group)
+  - multiple [Gateways](https://github.com/DefGuard/gateway) for each VPN Location (**high availability/failover**) - supported on a cluster of routers/firewalls for Linux, FreeBSD/PFSense/OPNSense
+  - **import your current WireGuard server configuration (with a wizard!)**
+  - *in-development*: [Desktop Clients!](https://github.com/defguard/client)
+  - automatic IP allocation
+  - kernel (Linux, FreeBSD/OPNSense/PFSense) & userspace WireGuard support with [our Rust library](https://github.com/defguard/wireguard-rs)
   - dashboard and statistics overview of connected users/devices for admins
   - *defguard is not an official WireGuard project, and WireGuard is a registered trademark of Jason A. Donenfeld.*
-* Multi-Factor Authentication:
-  - Time-based One-Time Password Algorithm (TOTP - e.g. Google Authenticator)
+* [Multi-Factor/2FA](https://en.wikipedia.org/wiki/Multi-factor_authentication) Authentication:
+  - [Time-based One-Time Password Algorithm](https://en.wikipedia.org/wiki/Time-based_one-time_password) (TOTP - e.g. Google Authenticator)
   - WebAuthn / FIDO2 - for hardware key authentication support (eg. YubiKey, FaceID, TouchID, ...)
-  - Web3 - authentication with crypto software and hardware wallets using Metamask, Wallet Connect, Ledger Extension
+  - Web3 - authentication with crypto software and hardware wallets using Metamask, Ledger Extension
 * [Yubikey hardware keys](https://www.yubico.com/) provisioning for users by *one click*
+* [Email/SMTP support](https://defguard.gitbook.io/defguard/help/setting-up-smtp-for-email-notifications) for notifications, remote enrollment and onboarding
+* Easy support with [sending debug/support information](https://defguard.gitbook.io/defguard/help/sending-support-info)
 * Webhooks & REST API
 * Web3 wallet validation
 * Build with [Rust](https://www.rust-lang.org/) for portability, security, and speed
-* Fronted in TypeScript with:
+* [UI Library](https://github.com/defguard/ui) - our beautiful React/TypeScript UI is a collection of React components:
   - a set of custom and beautiful components for the layout
   - Responsive Web Design (supporting mobile phones, tablets, etc..)
   - [iOS Web App](https://www.macrumors.com/how-to/use-web-apps-iphone-ipad/)
 * **Checked by professional security researchers** (see [comprehensive security report](https://defguard.net/images/decap/isec-defguard.pdf))
 * End2End tests
+
+![](https://github.com/DefGuard/docs/blob/docs/screencasts/defguard.gif?raw=true)
